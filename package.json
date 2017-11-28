@@ -1,7 +1,7 @@
 {
   "name": "vue_cmsify",
   "version": "1.0.0",
-  "description": "Template for building Vue CMS projects w/ Nuxt + Nuxntent + Netlify",
+  "description": "Template for building Vue CMS projects w/ Nuxt + Nuxtent + Netlify",
   "author": "Andrew Haupt <ajhaupt7@gmail.com>",
   "private": true,
   "scripts": {
@@ -13,10 +13,12 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
-    "nuxt": "^1.0.0-rc11"
+    "netlify-cms": "^0.7.6",
+    "nuxt": "latest",
+    "nuxtent": "latest",
+    "@nuxtjs/axios": "^4.5.0"
   },
   "devDependencies": {
-    "@nuxtjs/axios": "^4.5.0",
     "babel-eslint": "^7.2.3",
     "eslint": "^4.3.0",
     "eslint-config-standard": "^10.2.1",
@@ -28,7 +30,6 @@
     "eslint-plugin-standard": "^3.0.1",
     "node-sass": "^4.7.2",
     "nuxt-netlify-cms": "^2.0.1",
-    "nuxtent": "^1.1.0",
     "sass-loader": "^6.0.6"
   }
 }
