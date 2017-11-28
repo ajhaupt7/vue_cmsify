@@ -1,62 +1,20 @@
 <template>
-  <div class="VueToNuxtLogo">
-    <div class="Triangle Triangle--two"></div>
-    <div class="Triangle Triangle--one"></div>
-    <div class="Triangle Triangle--three"></div>
-    <div class="Triangle Triangle--four"></div>
-  </div>
+  <svg class="ah-logo" width="330" height="288" viewBox="0 0 330 288">
+    <g fill="none" stroke="#000" stroke-width="13" stroke-miterlimit="10">
+      <path stroke-linecap="square" d="M146.77 166.334c.016-13.863 3.82-28.028.43-41.77-3.73-15.116-18.675-20.86-32.87-16.26-13.883 4.5-25.598 20.932-18.916 35.692 3.364 7.434 12.636 10.033 19.998 11.29 8.78 1.5 18.273 1.722 27.12.83 19.086-1.927 33.364-16.936 43.07-32.445 8.12-12.972 13.122-27.652 14.988-42.826 1.396-11.345.76-26.306-11.804-31.026-5.11-1.92-11.957-2.55-16.65.765-3.96 2.797-5.515 7.735-6.146 12.326-1.598 11.612 1.224 24.003 3.664 35.314 2.39 11.067 4.975 22.107 6.76 33.295 2.345 14.69 1.666 22.205.19 33.888-.48 3.81-2.77 17.426-9.52 27.426"/>
+      <path d="M164.958 196.084c2.72-4.066 6.61-7.123 10.578-9.896a279.554 279.554 0 0 1 13.507-8.9c5.92-3.648 12.137-6.744 19.125-7.577 3.818-.455 8.81.26 11.273 3.484 5.1 6.668 3.19 16.373 2.89 24.096-.193 4.898.04 11.632 3.486 15.49 2.43 2.72 6.21 3.96 9.517 5.223"/>
+    </g>
+  </svg>
 </template>
 
 <style>
-.VueToNuxtLogo {
+.logo {
   display: inline-block;
   animation: turn 2s linear forwards 1s;
   transform: rotateX(180deg);
   position: relative;
   overflow: hidden;
-  height: 180px;
   width: 245px;
-}
-
-.Triangle {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 0;
-}
-
-.Triangle--one {
-  border-left: 105px solid transparent;
-  border-right: 105px solid transparent;
-  border-bottom: 180px solid #41B883;
-}
-
-.Triangle--two {
-  top: 30px;
-  left: 35px;
-  animation: goright 0.5s linear forwards 3.5s;
-  border-left: 87.5px solid transparent;
-  border-right: 87.5px solid transparent;
-  border-bottom: 150px solid #3B8070;
-}
-
-.Triangle--three {
-  top: 60px;
-  left: 35px;
-  animation: goright 0.5s linear forwards 3.5s;
-  border-left: 70px solid transparent;
-  border-right: 70px solid transparent;
-  border-bottom: 120px solid #35495E;
-}
-
-.Triangle--four {
-  top: 120px;
-  left: 70px;
-  animation: godown 0.5s linear forwards 3s;
-  border-left: 35px solid transparent;
-  border-right: 35px solid transparent;
-  border-bottom: 60px solid #fff;
 }
 
 @keyframes turn {

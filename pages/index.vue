@@ -3,7 +3,7 @@
     <div>
       <logo/>
       <h1 class="title">
-        vue_cmsify
+        Vue CMSify
       </h1>
       <h2 class="subtitle">
         Template for building Vue CMS projects w/ Nuxt + Nuxntent + Netlify
