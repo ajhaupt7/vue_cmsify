@@ -5,9 +5,10 @@
       <h1 class="title">
         Vue CMSify
       </h1>
-      <h2 class="subtitle">
-        Template for building Vue CMS projects w/ Nuxt + Nuxntent + Netlify
-      </h2>
+      <h3 class="subtitle">
+        Template for building Vue CMS projects w/ Nuxt + Nuxtent + Netlify
+      </h3>
+      <h4>Assembled by Andrew Haupt</h4>
       <div class="links">
         <a href="https://nuxtjs.org/" target="_blank" class="button--green">Documentation</a>
         <a href="https://github.com/nuxt/nuxt.js" target="_blank" class="button--grey">GitHub</a>
@@ -26,7 +27,9 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+@import '~assets/styles/variables.scss';
+
 .container {
   min-height: 100vh;
   display: flex;
@@ -36,20 +39,20 @@ export default {
 }
 
 .title {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
+  font-family: $title-font; /* 1 */
   display: block;
-  font-weight: 300;
+  font-weight: 600;
   font-size: 100px;
-  color: #35495e;
+  color: $text-color;
   letter-spacing: 1px;
 }
 
 .subtitle {
   font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
+  font-size: 32px;
+  line-height: 48px;
+  color: $text-color;
+  padding: 15px 30px;
 }
 
 .links {

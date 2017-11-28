@@ -4,9 +4,11 @@
   </div>
 </template>
 
-<style>
+<style lang="scss">
+@import '~assets/styles/variables.scss';
+
 html {
-  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: $body-font;
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
@@ -19,6 +21,11 @@ html {
 *, *:before, *:after {
   box-sizing: border-box;
   margin: 0;
+}
+
+body {
+  background-image: linear-gradient(to right bottom, #e56440, #f44c55, #fc2e71, #fa0b94, #eb12bc);
+  color: $text-color;
 }
 
 .button--green {
