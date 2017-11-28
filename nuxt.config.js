@@ -35,10 +35,9 @@ module.exports = {
       }
     },
     css: [
-
+      { src: '~assets/css/app.scss', lang: 'scss' }
     ],
     plugins: [
-
     ],
     module: [
       /* ['@nuxtjs/google-analytics', { ua: 'YOUR_ANALYTICS_ID' }], */
