@@ -28,6 +28,27 @@ body {
   color: $text-color;
 }
 
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.title {
+  font-family: $title-font; /* 1 */
+  display: block;
+  font-weight: 600;
+  font-size: 80px;
+  color: $text-color;
+  letter-spacing: 1px;
+}
+
+a {
+  color: white;
+}
+
 .button--green {
   display: inline-block;
   border-radius: 4px;
