@@ -1,19 +1,17 @@
 <template>
-  <div>
-    <div class="profile-image-wrapper">
-      <img class="profile-image" src="~/static/bio-photo.png" />
-    </div>
+  <div class="profile-image-wrapper">
+    <img class="profile-image" src="~/static/bio-photo.png" />
   </div>
 </template>
 
 <style lang="scss">
 .profile-image-wrapper {
-  float: right;
   margin: 15px;
   border-radius: 100%;
   width: 150px;
   height: 150px;
   overflow: hidden;
+  text-align: right;
 
   .profile-image {
     width: 100%;
