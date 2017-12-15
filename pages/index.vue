@@ -1,9 +1,7 @@
 <template>
   <section class="container">
     <div>
-      <h1 class="title">
-        yasark
-      </h1>
+      <ProfileImage />
       <h4>- Yasar Kücükkaya</h4>
       <div class="recent-posts">
         <div v-for="post in posts" :key="post.date" class="post">
@@ -23,7 +21,11 @@
 </template>
 
 <script>
+import ProfileImage from '~/components/ProfileImage'
 export default {
+  components: {
+    ProfileImage
+  },
   async asyncData ({ app }) {
     return {
       posts: await app.$content('/').getAll()
@@ -40,13 +42,10 @@ export default {
 }
 
 .recent-posts {
+  display: block;
   margin-top: 20px;
   border-top: 1px solid black;
-  width: 80%;
   min-width: 250px;
-  display: block;
-  // padding: 30px 0;
-  // margin: 30px auto 0;
   text-align: left;
 
   .post {
