@@ -18,10 +18,16 @@ export default {
 
 <style lang="scss" scoped>
 .back a {
+  display: inline-block;
   font-size: 16px;
-  padding: 10px 0;
-  display: block;
+  padding: 10px;
   width: auto;
+  border: 1px solid rgba(0,0,0,0.3);
+  margin-top: 5px;
+
+  @media screen and (max-width: 676px) {
+    font-size: 22px;
+  }
 }
 .container {
   text-align: left;

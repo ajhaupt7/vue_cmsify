@@ -25,8 +25,13 @@ html {
 }
 
 body {
-  // background-image: linear-gradient(to right bottom, #e56440, #f44c55, #fc2e71, #fa0b94, #eb12bc);
-  // color: $text-color;
+  @media screen and (max-width: 678px) {
+    padding: 10px;
+  }
+}
+
+p, a {
+  font-size: 22px;
 }
 
 .container {
@@ -38,6 +43,7 @@ body {
   font-family: $title-font; /* 1 */
   display: block;
   margin: 0;
+  margin-top: 20px;
   font-weight: 600;
   font-size: 48px;
   letter-spacing: 1px;
