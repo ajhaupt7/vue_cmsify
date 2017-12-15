@@ -5,6 +5,7 @@
 </template>
 
 <style lang="scss">
+@import '~assets/styles/normalize.scss';
 @import '~assets/styles/variables.scss';
 
 html {
@@ -24,29 +25,31 @@ html {
 }
 
 body {
-  background-image: linear-gradient(to right bottom, #e56440, #f44c55, #fc2e71, #fa0b94, #eb12bc);
-  color: $text-color;
+  // background-image: linear-gradient(to right bottom, #e56440, #f44c55, #fc2e71, #fa0b94, #eb12bc);
+  // color: $text-color;
 }
 
 .container {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .title {
   font-family: $title-font; /* 1 */
   display: block;
+  margin: 0;
   font-weight: 600;
-  font-size: 80px;
-  color: $text-color;
+  font-size: 48px;
   letter-spacing: 1px;
 }
 
 a {
-  color: white;
+  color: black;
+  transition: all 300ms ease-in-out;
+
+  &:hover {
+    color: red;
+  }
 }
 
 </style>

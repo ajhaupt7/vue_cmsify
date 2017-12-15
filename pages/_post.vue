@@ -1,5 +1,6 @@
 <template>
   <section class="container">
+    <div class="back"><nuxt-link to="/">Back</nuxt-link></div>
     <h1 class="title">{{ post.title }}</h1>
     <section v-html="post.body" />
   </section>
@@ -16,11 +17,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.back a {
+  font-size: 16px;
+  padding: 10px 0;
+  display: block;
+  width: auto;
+}
 .container {
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  padding: 50px;
   text-align: left;
   h1 {
     margin-bottom: 15px;
