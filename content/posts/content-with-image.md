@@ -8,4 +8,4 @@ Test content
 console.log('Hello World');
 ```
 
-![Alt](/static/uploads/bio-photo.png)
+![Alt](/uploads/bio-photo.png)
