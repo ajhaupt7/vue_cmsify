@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: yashha/vue_cmsify # Change to your repo
+  repo: yashha/yasark # Change to your repo
   url: http://thirsty-bell-7248a3.netlify.com/
 
 media_folder: "static/uploads"
