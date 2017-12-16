@@ -4,8 +4,6 @@
   </div>
 </template>
 
-<script>
-
 <style lang="scss">
 @import '~assets/styles/normalize.scss';
 @import '~assets/styles/variables.scss';
