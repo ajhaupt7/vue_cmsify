@@ -13,10 +13,11 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
+    "@nuxtjs/axios": "^4.5.0",
     "netlify-cms": "^0.7.6",
     "nuxt": "latest",
     "nuxtent": "latest",
-    "@nuxtjs/axios": "^4.5.0"
+    "tinytyper": "^0.1.0"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",

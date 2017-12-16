@@ -1,7 +1,7 @@
 <template>
   <section class="container">
     <div class="back"><nuxt-link to="/">Back</nuxt-link></div>
-    <h1 class="title">{{ post.title }}</h1>
+    <h1 class="title typed">{{ post.title }}</h1>
     <section v-html="post.body" />
   </section>
 </template>
@@ -11,6 +11,11 @@ export default {
   async asyncData ({ app, route }) {
     return {
       post: await app.$content('/').get(route.path)
+    }
+  },
+  head () {
+    return {
+      title: this.post.title + ' | yasark.de'
     }
   }
 }

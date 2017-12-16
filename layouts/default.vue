@@ -4,6 +4,23 @@
   </div>
 </template>
 
+<script>
+
+export default {
+  mounted () {
+    var TinyTyper = require('tinytyper')
+    const el = document.querySelector('.typed')
+    const options = {
+      staticCursor: false
+    }
+    const instance = new TinyTyper(el, options)
+    console.log(instance)
+
+    instance.animate()
+  }
+}
+</script>
+
 <style lang="scss">
 @import '~assets/styles/normalize.scss';
 @import '~assets/styles/variables.scss';
@@ -32,6 +49,18 @@ body {
 
 p, a {
   font-size: 22px;
+}
+
+.typed {
+  overflow: hidden;
+  white-space: nowrap;
+  letter-spacing: .15em; /* Adjust as needed */
+  animation:
+    typing 3.5s steps(40, end);
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
 }
 
 .container {

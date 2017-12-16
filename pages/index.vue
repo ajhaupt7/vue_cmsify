@@ -8,10 +8,10 @@
           <h6 class="created-at" v-html="post.date"></h6>
             <h2>
               <nuxt-link
-                class="post-title"
+                class="post-title typed"
                 :to="post.permalink"
               >
-                {{ post.title }}
+              <div class="typed">{{ post.title }}</div>
               </nuxt-link>
             </h2>
         </div>
