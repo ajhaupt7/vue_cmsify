@@ -57,6 +57,7 @@ module.exports = {
     { src: '~assets/styles/app.scss', lang: 'scss' }
   ],
   plugins: [
+    { src: '~plugins/vue-lazyload', ssr: false },
   ],
   modules: [
     'nuxt-netlify-cms',

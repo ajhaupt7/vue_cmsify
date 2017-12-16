@@ -3,11 +3,16 @@
     <div class="back"><nuxt-link to="/">Back</nuxt-link></div>
     <h1 class="title typed">{{ post.title }}</h1>
     <section v-html="post.body" />
+    <Comments :post=post />
   </section>
 </template>
 
 <script>
+import Comments from '~/components/Comments'
 export default {
+  components: {
+    Comments
+  },
   async asyncData ({ app, route }) {
     return {
       post: await app.$content('/').get(route.path)
