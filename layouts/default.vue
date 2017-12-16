@@ -6,20 +6,6 @@
 
 <script>
 
-export default {
-  mounted () {
-    var TinyTyper = require('tinytyper')
-    const el = document.querySelector('.typed')
-    const options = {
-      staticCursor: false
-    }
-    const instance = new TinyTyper(el, options)
-
-    instance.animate()
-  }
-}
-</script>
-
 <style lang="scss">
 @import '~assets/styles/normalize.scss';
 @import '~assets/styles/variables.scss';

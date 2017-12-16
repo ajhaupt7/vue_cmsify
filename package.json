@@ -16,8 +16,7 @@
     "@nuxtjs/axios": "^4.5.0",
     "netlify-cms": "^0.7.6",
     "nuxt": "latest",
-    "nuxtent": "latest",
-    "tinytyper": "^0.1.0"
+    "nuxtent": "latest"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
