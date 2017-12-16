@@ -1,6 +1,6 @@
 ---
 title: Content with image
-date: '2017-12-15 01:18am'
+date: '2017-12-15 01:18:00'
 ---
 Test content
 
