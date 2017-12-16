@@ -14,7 +14,6 @@ export default {
       staticCursor: false
     }
     const instance = new TinyTyper(el, options)
-    console.log(instance)
 
     instance.animate()
   }
