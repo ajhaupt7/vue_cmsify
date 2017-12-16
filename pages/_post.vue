@@ -15,7 +15,7 @@ export default {
   },
   head () {
     return {
-      title: this.post.title + ' | yasark.de'
+      title: this.post.title + ' | Yasar Kücükkaya'
     }
   }
 }
