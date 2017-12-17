@@ -10,7 +10,7 @@ module.exports = {
       { hid: 'description', name: 'description', content: 'Personal Website of Yasar Kücükkaya' }
     ],
     htmlAttrs: {
-      lang: 'zh-Hant',
+      lang: 'de-DE'
     },
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
