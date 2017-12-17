@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^4.5.0",
-    "netlify-cms": "^0.7.6",
+    "netlify-cms": "^1.0.2",
     "nuxt": "latest",
     "nuxtent": "latest",
     "vue-disqus": "^2.0.4",
