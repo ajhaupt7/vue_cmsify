@@ -1,6 +1,6 @@
 <template>
   <div class="profile-image-wrapper">
-    <img class="profile-image" src="~/static/bio-photo.png" />
+    <img class="profile-image" src="~/static/bio-photo.jpg" />
   </div>
 </template>
 
