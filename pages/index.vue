@@ -4,7 +4,8 @@
       <div class="columns">
         <div class="column">
           <div class="profile-image-wrapper"><ProfileImage /></div>
-          <h4 class="profile-text">Yasar Kücükkaya</h4>
+          <h4 class="title is-2 profile-text">Yasar Kücükkaya</h4>
+          <h4 class="subtitle is-4 profile-text">webdev, open source and left activism</h4>
         </div>
       </div>
       <div class="recent-posts">
@@ -48,7 +49,6 @@ export default {
 
 .profile-text {
   text-align: center;
-  margin-top: 20px
 }
 
 .links {
