@@ -6,6 +6,16 @@
 
 <style lang="scss">
 @import '~assets/styles/normalize.scss';
+</style>
+
+<style lang="sass">
+ @import "bulma/sass/utilities/_all";
+ @import "bulma/sass/base/_all";
+ @import "bulma/sass/grid/columns";
+</style>
+
+
+<style lang="scss">
 @import '~assets/styles/variables.scss';
 
 html {

@@ -1,3 +1,6 @@
+
+const path = require('path')
+
 module.exports = {
   /*
   ** Headers of the page
@@ -54,6 +57,8 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
+      const vueLoader = config.module.rules.find((rule) => rule.loader === 'vue-loader')
+      vueLoader.options.loaders.sass = 'vue-style-loader!css-loader!sass-loader?' + JSON.stringify({ includePaths: [path.resolve(__dirname), 'node_modules'] })
     }
   },
   css: [

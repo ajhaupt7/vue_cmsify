@@ -2,6 +2,7 @@
   <section class="container">
     <div class="back"><nuxt-link to="/">Back</nuxt-link></div>
     <h1 class="title typed">{{ post.title }}</h1>
+    <div>{{post.date}}</div>
     <section v-html="post.body" />
     <Comments :post=post />
   </section>

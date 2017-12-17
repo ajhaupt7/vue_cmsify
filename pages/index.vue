@@ -1,19 +1,23 @@
 <template>
-  <section class="container">
-    <div>
-      <ProfileImage />
-      <h4>- Yasar Kücükkaya</h4>
+  <section class="section">
+    <div class="container">
+      <div class="columns">
+        <div class="column">
+          <div class="profile-image-wrapper"><ProfileImage /></div>
+          <h4 class="profile-text">Yasar Kücükkaya</h4>
+        </div>
+      </div>
       <div class="recent-posts">
         <div v-for="post in posts" :key="post.date" class="post">
           <h6 class="created-at" v-html="post.date"></h6>
-            <h2>
-              <nuxt-link
-                class="post-title typed"
-                :to="post.permalink"
-              >
-              <div class="typed">{{ post.title }}</div>
-              </nuxt-link>
-            </h2>
+          <h2>
+            <nuxt-link
+              class="post-title typed"
+              :to="post.permalink"
+            >
+            <div class="typed">{{ post.title }}</div>
+            </nuxt-link>
+          </h2>
         </div>
       </div>
     </div>
@@ -34,8 +38,18 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import '~assets/styles/variables.scss';
+
+.profile-image-wrapper {
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.profile-text {
+  text-align: center;
+  margin-top: 20px
+}
 
 .links {
   padding-top: 15px;
@@ -44,7 +58,6 @@ export default {
 .recent-posts {
   display: block;
   margin-top: 20px;
-  border-top: 1px solid black;
   min-width: 250px;
   text-align: left;
 

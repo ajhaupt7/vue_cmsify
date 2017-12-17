@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^4.5.0",
+    "bulma": "^0.6.1",
     "netlify-cms": "^1.0.2",
     "nuxt": "latest",
     "nuxtent": "latest",
