@@ -67,6 +67,11 @@ export default {
   .post {
     border-top: 1px solid rgba(0,0,0,0.3);
     padding: 20px 0;
+
+    &:first-child {
+      border: none;
+      padding-top: 0;
+    }
   }
   .created-at {
     font-size: 16px;
