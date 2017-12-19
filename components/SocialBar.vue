@@ -2,7 +2,7 @@
   <div class='social-bar'>
     <a class='icon' href='https://github.com/yashha'><Github /></a>
     <a class='icon' href='https://github-profile-summary.com/user/yashha'><GithubProfile /></a>
-    <a class='icon' href='https://github-profile-summary.com/user/yashha'><Twitter /></a>
+    <a class='icon' href='https://twitter.com/yashha2'><Twitter /></a>
   </div>
 </template>
 
@@ -23,12 +23,12 @@ export default {
 <style lang="scss" scoped>
   .social-bar {
     text-align: center;
-    
+
     .icon {
       display: inline-block;
       margin: 0 30px;
       transition: all 0.3s ease-out;
-      
+
       &:hover {
         transform: scale(1.3);
       }
