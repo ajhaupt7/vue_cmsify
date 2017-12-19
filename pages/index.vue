@@ -6,6 +6,7 @@
           <div class="profile-image-wrapper"><ProfileImage /></div>
           <h4 class="title is-2 profile-text">Yasar Kücükkaya</h4>
           <h4 class="subtitle is-4 profile-text">webdev, open source and left activism</h4>
+          <SocialBar />
         </div>
       </div>
       <div class="recent-posts">
@@ -27,9 +28,11 @@
 
 <script>
 import ProfileImage from '~/components/ProfileImage'
+import SocialBar from '~/components/SocialBar'
 export default {
   components: {
-    ProfileImage
+    ProfileImage,
+    SocialBar
   },
   async asyncData ({ app }) {
     return {
