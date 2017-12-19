@@ -65,7 +65,7 @@ export default {
   text-align: left;
 
   .post {
-    border-top: 1px solid black;
+    border-top: 1px solid rgba(0,0,0,0.3);
     padding: 20px 0;
   }
   .created-at {
