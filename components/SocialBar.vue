@@ -1,8 +1,8 @@
 <template>
   <div class='social-bar'>
-    <a class='icon' target="_blank" title='GitHub' href='https://github.com/yashha'><Github /></a>
-    <a class='icon' target="_blank" title='GitHub Profile Summary' href='https://github-profile-summary.com/user/yashha'><GithubProfile /></a>
-    <a class='icon' target="_blank" title='Twitter' href='https://twitter.com/yashha2'><Twitter /></a>
+    <a class='icon' target="_blank" rel="noopener" title='GitHub' href='https://github.com/yashha'><Github /></a>
+    <a class='icon' target="_blank" rel="noopener" title='GitHub Profile Summary' href='https://github-profile-summary.com/user/yashha'><GithubProfile /></a>
+    <a class='icon' target="_blank" rel="noopener" title='Twitter' href='https://twitter.com/yashha2'><Twitter /></a>
   </div>
 </template>
 
