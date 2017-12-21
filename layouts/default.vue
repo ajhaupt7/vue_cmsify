@@ -81,4 +81,15 @@ a {
   }
 }
 
+.page-enter-active,
+.page-leave-active {
+    transition: all .4s cubic-bezier(0.165, 0.840, 0.440, 1.000);
+}
+
+.page-enter,
+.page-leave-active {
+    opacity: 0;
+    transform: scale(0.95);
+    transform-origin: 50% 50%;
+}
 </style>
