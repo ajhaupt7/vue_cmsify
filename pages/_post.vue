@@ -2,7 +2,7 @@
   <section class="container">
     <div class="back"><nuxt-link to="/">Back</nuxt-link></div>
     <h1 class="title typed">{{ post.title }}</h1>
-    <div>{{post.date}}</div>
+    <div>{{parseDate(post.datetime)}}</div>
     <section v-html="post.body" />
     <Comments :post=post />
   </section>
@@ -10,6 +10,7 @@
 
 <script>
 import Comments from '~/components/Comments'
+import tinydate from 'tinydate'
 export default {
   components: {
     Comments
@@ -17,6 +18,13 @@ export default {
   async asyncData ({ app, route }) {
     return {
       post: await app.$content('/').get(route.path)
+    }
+  },
+  methods: {
+    parseDate: (date) => {
+      const parsedDate = new Date(date)
+      const stamp = tinydate('{DD}.{MM}.{YYYY} {HH}:{mm}:{ss}')
+      return stamp(parsedDate)
     }
   },
   head () {

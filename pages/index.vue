@@ -15,7 +15,7 @@
             class="link"
             :to="post.permalink"
           >
-            <h6 class="created-at" v-html="parseDate(post.datetime)" v-bind:title="post.datetime"></h6>
+            <h6 class="created-at" v-html="parseDateAgo(post.datetime)" v-bind:title="parseDate(post.datetime)"></h6>
             <h2>
               <div class="post-title typed">{{ post.title }}</div>
             </h2>
@@ -30,6 +30,7 @@
 import ProfileImage from '~/components/ProfileImage'
 import SocialBar from '~/components/SocialBar'
 import timeago from 'timeago.js'
+import tinydate from 'tinydate'
 export default {
   components: {
     ProfileImage,
@@ -41,9 +42,14 @@ export default {
     }
   },
   methods: {
-    parseDate: (date) => {
+    parseDateAgo: (date) => {
       var timeagoInstance = timeago()
       return timeagoInstance.format(date)
+    },
+    parseDate: (date) => {
+      const parsedDate = new Date(date)
+      const stamp = tinydate('{DD}.{MM}.{YYYY} {HH}:{mm}:{ss}')
+      return stamp(parsedDate)
     }
   }
 }
