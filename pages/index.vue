@@ -10,7 +10,7 @@
         </div>
       </div>
       <div class="recent-posts">
-        <div v-for="post in posts" :key="post.date" class="post">
+        <div v-for="post in posts" :key="post.date" class="post draw meet">
           <h6 class="created-at" v-html="post.date"></h6>
           <h2>
             <nuxt-link
@@ -44,6 +44,7 @@ export default {
 
 <style lang="scss" scoped>
 @import '~assets/styles/variables.scss';
+@import '~assets/styles/plugins/button_animation.scss';
 
 .profile-image-wrapper {
   margin: 0 auto;
@@ -64,15 +65,6 @@ export default {
   min-width: 250px;
   text-align: left;
 
-  .post {
-    border-top: 1px solid rgba(0,0,0,0.3);
-    padding: 20px 0;
-
-    &:first-child {
-      border: none;
-      padding-top: 0;
-    }
-  }
   .created-at {
     font-size: 16px;
     margin-bottom: 10px;
