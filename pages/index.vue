@@ -11,15 +11,15 @@
       </div>
       <div class="recent-posts">
         <div v-for="post in posts" :key="post.datetime" class="post draw meet">
-          <h6 class="created-at" v-html="parseDate(post.datetime)" v-bind:title="post.datetime"></h6>
-          <h2>
-            <nuxt-link
-              class="post-title typed"
-              :to="post.permalink"
-            >
-            <div class="typed">{{ post.title }}</div>
-            </nuxt-link>
-          </h2>
+          <nuxt-link
+            class="link"
+            :to="post.permalink"
+          >
+            <h6 class="created-at" v-html="parseDate(post.datetime)" v-bind:title="post.datetime"></h6>
+            <h2>
+              <div class="post-title typed">{{ post.title }}</div>
+            </h2>
+          </nuxt-link>
         </div>
       </div>
     </div>
@@ -75,6 +75,11 @@ export default {
   .created-at {
     font-size: 16px;
     margin-bottom: 10px;
+  }
+
+  .link {
+    pointer-events: all;
+    display: block;
   }
 }
 </style>
