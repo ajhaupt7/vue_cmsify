@@ -1,6 +1,6 @@
 ---
 title: Content with image
-date: '2017-12-15 01:18:00'
+datetime: 2017-12-15 01:18:00
 image: /uploads/aaron-burden-482597.jpg
 ---
 Test content

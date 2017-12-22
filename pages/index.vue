@@ -10,8 +10,8 @@
         </div>
       </div>
       <div class="recent-posts">
-        <div v-for="post in posts" :key="post.date" class="post draw meet">
-          <h6 class="created-at" v-html="post.date"></h6>
+        <div v-for="post in posts" :key="post.datetime" class="post draw meet">
+          <h6 class="created-at" v-html="parseDate(post.datetime)" v-bind:title="post.datetime"></h6>
           <h2>
             <nuxt-link
               class="post-title typed"
@@ -29,6 +29,7 @@
 <script>
 import ProfileImage from '~/components/ProfileImage'
 import SocialBar from '~/components/SocialBar'
+import timeago from 'timeago.js'
 export default {
   components: {
     ProfileImage,
@@ -36,7 +37,13 @@ export default {
   },
   async asyncData ({ app }) {
     return {
-      posts: await app.$content('/').getAll()
+      posts: (await app.$content('/').getAll()).sort((a, b) => new Date(b.datetime) - new Date(a.datetime))
+    }
+  },
+  methods: {
+    parseDate: (date) => {
+      var timeagoInstance = timeago()
+      return timeagoInstance.format(date)
     }
   }
 }

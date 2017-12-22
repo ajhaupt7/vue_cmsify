@@ -18,6 +18,7 @@
     "netlify-cms": "^1.0.2",
     "nuxt": "latest",
     "nuxtent": "latest",
+    "timeago.js": "^3.0.2",
     "vue-disqus": "^2.0.4",
     "vue-lazyload": "^1.1.4"
   },
