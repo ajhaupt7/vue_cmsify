@@ -52,6 +52,8 @@ export default {
   text-align: left;
   h1 {
     margin-bottom: 15px;
+    white-space: inherit;
+    animation: none;
   }
 }
 </style>

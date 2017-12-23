@@ -87,5 +87,12 @@ export default {
     pointer-events: all;
     display: block;
   }
+
+  .post {
+    @media all and (max-width: 678px) {
+      margin: 0;
+      padding: 5px;
+    }
+  }
 }
 </style>
