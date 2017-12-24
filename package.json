@@ -15,7 +15,7 @@
   "dependencies": {
     "@nuxtjs/axios": "^4.5.0",
     "bulma": "^0.6.1",
-    "netlify-cms": "^1.0.2",
+    "netlify-cms": "^1.0.3",
     "nuxt": "latest",
     "nuxtent": "latest",
     "timeago.js": "^3.0.2",
