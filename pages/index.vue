@@ -37,9 +37,17 @@ export default {
     SocialBar
   },
   async asyncData ({ app }) {
+    const [postsRes, projectsRes] = await Promise.all([
+      (await app.$content('/posts').getAll()).sort((a, b) => new Date(b.datetime) - new Date(a.datetime)),
+      await app.$content('/projects').getAll()
+    ])
     return {
-      posts: (await app.$content('/').getAll()).sort((a, b) => new Date(b.datetime) - new Date(a.datetime))
+      posts: postsRes,
+      projects: projectsRes
     }
+  },
+  mounted: () => {
+    console.log(this.projects)
   },
   methods: {
     parseDateAgo: (date) => {
