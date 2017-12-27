@@ -22,6 +22,7 @@ export default {
 
 <style lang="scss" scoped>
   .social-bar {
+    margin-top: 20px;
     text-align: center;
 
     .icon {

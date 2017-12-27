@@ -5,14 +5,8 @@
 </template>
 
 <style lang="scss">
-// @import '~assets/styles/normalize.scss';
-</style>
-
-<style lang="sass">
- @import "bulma/sass/utilities/_all";
- @import "bulma/sass/base/_all";
- @import "bulma/sass/elements/title";
- @import "bulma/sass/grid/columns";
+@import 'purecss/build/pure-min.css';
+@import 'tipograf/dist/tipograf.css';
 </style>
 
 

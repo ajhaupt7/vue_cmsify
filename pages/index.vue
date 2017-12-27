@@ -4,8 +4,8 @@
       <div class="columns">
         <div class="column">
           <div class="profile-image-wrapper"><ProfileImage /></div>
-          <h4 class="title is-2 profile-text">Yasar Kücükkaya</h4>
-          <h4 class="subtitle is-4 profile-text">webdev, open source and left activism</h4>
+          <h1 class="title center">Yasar Kücükkaya</h1>
+          <div class="subtitle center">webdev, open source and left activism</div>
           <SocialBar />
         </div>
       </div>
@@ -15,10 +15,10 @@
             class="link"
             :to="post.permalink"
           >
-            <h6 class="created-at" v-html="parseDateAgo(post.datetime)" v-bind:title="parseDate(post.datetime)"></h6>
-            <h2>
+            <div class="created-at" v-html="parseDateAgo(post.datetime)" v-bind:title="parseDate(post.datetime)"></div>
+            <div>
               <div class="post-title typed">{{ post.title }}</div>
-            </h2>
+            </div>
           </nuxt-link>
         </div>
       </div>
@@ -69,8 +69,17 @@ export default {
   margin-top: 20px;
 }
 
-.profile-text {
+.center {
   text-align: center;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: #363636;
+}
+.subtitle {
+  font-size: 1.5rem;
+  color: #4a4a4a;
 }
 
 .links {
@@ -94,6 +103,11 @@ export default {
   }
 
   .post {
+    font-weight: 400;
+
+    a {
+      text-decoration: none;
+    }
     @media all and (max-width: 678px) {
       margin: 0;
       padding: 5px;
