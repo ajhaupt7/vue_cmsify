@@ -46,9 +46,6 @@ export default {
       projects: projectsRes
     }
   },
-  mounted: () => {
-    console.log(this.projects)
-  },
   methods: {
     parseDateAgo: (date) => {
       var timeagoInstance = timeago()
