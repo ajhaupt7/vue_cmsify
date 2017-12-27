@@ -5,6 +5,12 @@
 </template>
 
 <style lang="scss">
+@import 'purecss/build/pure-min.css';
+@import 'tipograf/dist/tipograf.css';
+</style>
+
+
+<style lang="scss">
 @import '~assets/styles/variables.scss';
 
 html {
@@ -24,29 +30,60 @@ html {
 }
 
 body {
-  background-image: linear-gradient(to right bottom, #e56440, #f44c55, #fc2e71, #fa0b94, #eb12bc);
-  color: $text-color;
+  @media screen and (max-width: 678px) {
+    padding: 10px;
+  }
+}
+
+p, a {
+  font-size: 22px;
+}
+
+.typed {
+  overflow: hidden;
+  white-space: nowrap;
+  letter-spacing: .15em; /* Adjust as needed */
+  animation:
+    typing 3.5s steps(40, end);
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
 }
 
 .container {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .title {
   font-family: $title-font; /* 1 */
   display: block;
+  margin: 0;
+  margin-top: 20px;
   font-weight: 600;
-  font-size: 80px;
-  color: $text-color;
+  font-size: 48px;
   letter-spacing: 1px;
 }
 
 a {
-  color: white;
+  color: black;
+  transition: all 300ms ease-in-out;
+
+  &:hover {
+    color: red;
+  }
 }
 
+.page-enter-active,
+.page-leave-active {
+    transition: all .4s cubic-bezier(0.165, 0.840, 0.440, 1.000);
+}
+
+.page-enter,
+.page-leave-active {
+    opacity: 0;
+    transform: scale(0.95);
+    transform-origin: 50% 50%;
+}
 </style>

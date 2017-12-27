@@ -1,0 +1,218 @@
+// https://codepen.io/giana/pen/yYBpVY/
+//Colors
+$background: #fefefe;
+$text: #4b507a;
+
+$cyan: #60daaa;
+$after-color: red;
+$orange: #ff8a30;
+$before-color: white;
+$purple: #6477b9;
+$blue: #0eb7da;
+
+// Basic styles
+.draw {
+  background: none;
+  border: 0;
+  box-sizing: border-box;
+  margin: 1em;
+  padding: 1em 2em;
+  pointer-events: none;
+
+  // Using inset box-shadow instead of border for sizing simplicity
+  box-shadow: inset 0 0 0 2px $before-color;
+  color: black;
+  font-size: inherit;
+  font-weight: 700;
+
+  // Required, since we're setting absolute on pseudo-elements
+  position: relative;
+  vertical-align: middle;
+
+  &::before,
+  &::after {
+    box-sizing: inherit;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+}
+
+.draw {
+    transition: color 0.25s;
+
+  &::before,
+  &::after {
+    // Set border to invisible, so we don't see a 4px border on a 0x0 element before the transition starts
+    border: 2px solid transparent;
+    width: 0;
+    height: 0;
+  }
+
+  // This covers the top & right borders (expands right, then down)
+  &::before {
+    top: 0;
+    left: 0;
+  }
+
+  // And this the bottom & left borders (expands left, then up)
+  &::after {
+    bottom: 0;
+    right: 0;
+  }
+
+  &:hover {
+    color: $cyan;
+  }
+
+  // Hover styles
+  &:hover::before,
+  &:hover::after {
+    width: 100%;
+    height: 100%;
+  }
+
+  &:hover::before {
+    border-top-color: $cyan; // Make borders visible
+    border-right-color: $cyan;
+    transition:
+      width 0.25s ease-out, // Width expands first
+      height 0.25s ease-out 0.25s; // And then height
+  }
+
+  &:hover::after {
+    border-bottom-color: $cyan; // Make borders visible
+    border-left-color: $cyan;
+    transition:
+      border-color 0s ease-out 0.5s, // Wait for ::before to finish before showing border
+      width 0.25s ease-out 0.5s, // And then exanding width
+      height 0.25s ease-out 0.75s; // And finally height
+  }
+}
+
+// Inherits from .draw
+.meet {
+
+  &:hover * {
+    color: $after-color;
+  }
+
+  // Start ::after in same position as ::before
+  &::after {
+    top: 0;
+    left: 0;
+  }
+
+  // Change colors
+  &:hover::before {
+    border-top-color: $after-color;
+    border-right-color: $after-color;
+  }
+
+  &:hover::after {
+    border-bottom-color: $after-color;
+    border-left-color: $after-color;
+    transition: // Animate height first, then width
+      height 0.25s ease-out,
+      width 0.25s ease-out 0.25s;
+  }
+
+}
+
+// Border spins around element
+// ::before holds three borders that appear separately, one at a time
+// ::after holds one border that spins around to cover ::before's borders, making their appearance seem smooth
+
+.spin {
+  width: 5em;
+  height: 5em;
+  padding: 0;
+
+  &:hover {
+    color: $blue;
+  }
+
+  &::before,
+  &::after {
+    top: 0;
+    left: 0;
+  }
+
+  &::before {
+    border: 2px solid transparent; // We're animating border-color again
+  }
+
+  &:hover::before {
+    border-top-color: $blue; // Show borders
+    border-right-color: $blue;
+    border-bottom-color: $blue;
+
+    transition:
+      border-top-color 0.15s linear, // Stagger border appearances
+      border-right-color 0.15s linear 0.10s,
+      border-bottom-color 0.15s linear 0.20s;
+  }
+
+  &::after {
+    border: 0 solid transparent; // Makes border thinner at the edges? I forgot what I was doing
+  }
+
+  &:hover::after {
+    border-top: 2px solid $blue; // Shows border
+    border-left-width: 2px; // Solid edges, invisible borders
+    border-right-width: 2px; // Solid edges, invisible borders
+    transform: rotate(270deg); // Rotate around circle
+    transition:
+      transform 0.4s linear 0s,
+      border-left-width 0s linear 0.35s; // Solid edge post-rotation
+  }
+}
+
+.circle {
+  border-radius: 100%;
+  box-shadow: none;
+
+  &::before,
+  &::after {
+    border-radius: 100%;
+  }
+}
+
+.thick {
+  color: $before-color;
+
+  &:hover {
+    color: #fff;
+    font-weight: 700;
+  }
+
+  &::before {
+    border: 2.5em solid transparent;
+    z-index: -1;
+  }
+
+  &::after {
+    mix-blend-mode: color-dodge;
+    z-index: -1;
+  }
+
+  &:hover::before {
+    background: $before-color;
+    border-top-color: $before-color;
+    border-right-color: $before-color;
+    border-bottom-color: $before-color;
+    transition:
+      background 0s linear 0.4s,
+      border-top-color 0.15s linear,
+      border-right-color 0.15s linear 0.15s,
+      border-bottom-color 0.15s linear 0.25s;
+  }
+
+  &:hover::after {
+    border-top: 2.5em solid $before-color;
+    border-left-width: 2.5em;
+    border-right-width: 2.5em;
+  }
+}

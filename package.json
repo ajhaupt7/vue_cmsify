@@ -13,10 +13,16 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
-    "netlify-cms": "^0.7.6",
+    "@nuxtjs/axios": "^4.5.0",
+    "netlify-cms": "^1.0.3",
     "nuxt": "latest",
     "nuxtent": "latest",
-    "@nuxtjs/axios": "^4.5.0"
+    "purecss": "^1.0.0",
+    "timeago.js": "^3.0.2",
+    "tinydate": "^1.0.0",
+    "tipograf": "^2.0.0",
+    "vue-disqus": "^2.0.4",
+    "vue-lazyload": "^1.1.4"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",

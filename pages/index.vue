@@ -1,27 +1,25 @@
 <template>
-  <section class="container">
-    <div>
-      <logo/>
-      <h1 class="title">
-        Vue CMSify
-      </h1>
-      <h3 class="subtitle">
-        Template for building Vue CMS projects w/ Nuxt + Nuxtent + Netlify
-      </h3>
-      <h4>Assembled by Andrew Haupt</h4>
+  <section class="section">
+    <div class="container">
+      <div class="columns">
+        <div class="column">
+          <div class="profile-image-wrapper"><ProfileImage /></div>
+          <h1 class="title center">Yasar Kücükkaya</h1>
+          <div class="subtitle center">webdev, open source and left activism</div>
+          <SocialBar />
+        </div>
+      </div>
       <div class="recent-posts">
-        <div v-for="post in posts" :key="post.date" class="row post mb-5 justify-content-center">
-          <div class="col-sm-10">
-            <h6 class="created-at" v-html="post.date"></h6>
-            <h2>
-              <nuxt-link 
-                class="post-title" 
-                :to="post.permalink"
-              >
-                {{ post.title }}
-              </nuxt-link>
-            </h2>
-          </div>
+        <div v-for="post in posts" :key="post.datetime" class="post draw meet">
+          <nuxt-link
+            class="link"
+            :to="post.permalink"
+          >
+            <div class="created-at" v-html="parseDateAgo(post.datetime)" v-bind:title="parseDate(post.datetime)"></div>
+            <div>
+              <div class="post-title typed">{{ post.title }}</div>
+            </div>
+          </nuxt-link>
         </div>
       </div>
     </div>
@@ -29,33 +27,59 @@
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-
+import ProfileImage from '~/components/ProfileImage'
+import SocialBar from '~/components/SocialBar'
+import timeago from 'timeago.js'
+import tinydate from 'tinydate'
 export default {
   components: {
-    Logo
+    ProfileImage,
+    SocialBar
   },
   async asyncData ({ app }) {
+    const [postsRes, projectsRes] = await Promise.all([
+      (await app.$content('/posts').getAll()).sort((a, b) => new Date(b.datetime) - new Date(a.datetime)),
+      await app.$content('/projects').getAll()
+    ])
     return {
-      posts: await app.$content('/').getAll()
+      posts: postsRes,
+      projects: projectsRes
+    }
+  },
+  methods: {
+    parseDateAgo: (date) => {
+      var timeagoInstance = timeago()
+      return timeagoInstance.format(date)
+    },
+    parseDate: (date) => {
+      const parsedDate = new Date(date)
+      const stamp = tinydate('{DD}.{MM}.{YYYY} {HH}:{mm}:{ss}')
+      return stamp(parsedDate)
     }
   }
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import '~assets/styles/variables.scss';
+@import '~assets/styles/plugins/button_animation.scss';
 
+.profile-image-wrapper {
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.center {
+  text-align: center;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: #363636;
+}
 .subtitle {
-  font-weight: 300;
-  font-size: 32px;
-  line-height: 48px;
-  color: $text-color;
-  padding: 15px 30px;
-  width: 80%;
-  min-width: 250px;
-  display: block;
-  margin: auto;
+  font-size: 1.5rem;
+  color: #4a4a4a;
 }
 
 .links {
@@ -63,15 +87,31 @@ export default {
 }
 
 .recent-posts {
-  border-top: 1px solid $text-color;
-  width: 80%;
-  min-width: 250px;
   display: block;
-  padding: 30px 0;
-  margin: 30px auto 0;
+  margin-top: 20px;
+  min-width: 250px;
   text-align: left;
+
   .created-at {
+    font-size: 16px;
     margin-bottom: 10px;
+  }
+
+  .link {
+    pointer-events: all;
+    display: block;
+  }
+
+  .post {
+    font-weight: 400;
+
+    a {
+      text-decoration: none;
+    }
+    @media all and (max-width: 678px) {
+      margin: 0;
+      padding: 5px;
+    }
   }
 }
 </style>

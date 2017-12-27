@@ -1,14 +1,20 @@
+
+const path = require('path')
+
 module.exports = {
   /*
   ** Headers of the page
   */
   head: {
-    title: 'Vue Static CMS',
+    title: 'Yasar Kücükkaya',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Nuxt.js project' }
+      { hid: 'description', name: 'description', content: 'Personal Website of Yasar Kücükkaya' }
     ],
+    htmlAttrs: {
+      lang: 'de-DE'
+    },
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
@@ -16,7 +22,7 @@ module.exports = {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#3B8070' },
+  loading: { color: '#ff0000' },
   /*
   ** Build configuration
   */
@@ -51,27 +57,40 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
+      const vueLoader = config.module.rules.find((rule) => rule.loader === 'vue-loader')
+      vueLoader.options.loaders.sass = 'vue-style-loader!css-loader!sass-loader?' + JSON.stringify({ includePaths: [path.resolve(__dirname), 'node_modules'] })
     }
   },
   css: [
     { src: '~assets/styles/app.scss', lang: 'scss' }
   ],
   plugins: [
+    { src: '~plugins/vue-lazyload', ssr: false },
   ],
   modules: [
     'nuxt-netlify-cms',
     'nuxtent'
   ],
   nuxtent: {
-    content: {
-      permalink: ':slug',
-      page: '/_post',
-      isPost: false,
-      generate: [
-        'get',
-        'getAll'
+    content: [
+      [
+        'posts',
+        {
+          permalink: ':slug',
+          page: '/_post',
+          isPost: false,
+          generate: [ 'get', 'getAll' ]
+        }
+      ],
+      [
+        'projects',
+        {
+          page: '/projects/_slug',
+          permalink: '/projects/:slug',
+          isPost: false,
+          generate: [ 'get', 'getAll' ]
+        }
       ]
-    }
+    ]
   }
 }
-
